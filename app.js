@@ -2,8 +2,8 @@
 /*
 Autor: Jhonattan Gabriel Benavides Concha
 Fecha inicio: 12-09-2025
-Fecha fin:
-Versión: 1.0 
+Fecha fin: 15-09-2025
+Versión: 3.0 
 */
 
 //Array para almacenar nombres
