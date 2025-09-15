@@ -8,15 +8,14 @@ Versión: 1.0
 
 //Array para almacenar nombres
 let amigos = [];
-//Variable para capturar nuevo nombre
-let nombre;
-//Variable para capturar nuevo elemento de la lista
-let lista;
 
 function agregarAmigo(){
+    //Limpiar resultado
+    document.getElementById("resultado").innerHTML = "";
+
     //.trim() elimina espacios. 
     //.toUpperCase() convierte el nombre en mayúsculas.
-    nombre = document.getElementById("amigo").value.trim().toUpperCase();
+    let nombre = document.getElementById("amigo").value.trim().toUpperCase(); //Variable para capturar nuevo nombre
     let soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúñÑ]+$/; //Permite letras con mínimo 2 caracteres
 
     //Valida que el nombre:
@@ -37,7 +36,7 @@ function agregarAmigo(){
 }
 
 function actualizarListaAmigos(){
-    lista = document.getElementById("listaAmigos");
+    let lista = document.getElementById("listaAmigos"); //Variable para capturar nuevo elemento de la lista
     lista.innerHTML = ""; //Limpia la lista existente
 
     //Recorre el array de amigos y crea un elemento <li> por cada uno,
@@ -46,5 +45,21 @@ function actualizarListaAmigos(){
         let li = document.createElement("li");
         li.textContent = amigos[i];
         lista.appendChild(li);
+    }
+}
+
+function sortearAmigo(){
+    //Valida que haya amigos disponibles;
+    //de lo contrario, se muestra un mensaje de alerta
+    if (amigos.length >= 1){
+        let indice = Math.floor(Math.random()*amigos.length); //Generar un índice aleatorio entre el tamaño del array
+        let sorteado = amigos[indice]; //Obtener el nombre sorteado
+        document.getElementById("resultado").innerHTML = `El amigo secreto es: ${sorteado}`; //Mostrar el resultado en pantalla
+        
+        //Limpiar array y lista amigos
+        amigos = []; 
+        document.getElementById("listaAmigos").innerHTML = "";
+    } else{
+        alert("No hay amigos disponibles para sortear!")
     }
 }
