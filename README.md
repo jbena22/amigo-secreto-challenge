@@ -67,7 +67,7 @@ Actualmente, este proyecto no incluye pruebas automatizadas, pero puedes probar 
 
 ## ✒️ Autores
 
-* **Gabriel Benavides** - Desarrollo inicial - [jbena22](https://github.com/jbena22)
+* **Gabriel Benavides** - Desarrollo JavaScript - [jbena22](https://github.com/jbena22)
 
 ## 🎁 Expresiones de Gratitud
 
